@@ -1,0 +1,89 @@
+﻿@model Proyecto.Models.Automovil
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Automovil</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @if (Model.archivos.Any(f => f.tipo == FileType.Imagen))
+        {
+            <dt>Imagen</dt>
+            <dd>
+                <img src="~/Archivo/ObtenerArchivo?id=@Model.archivos.First(f => f.tipo == FileType.Imagen).idArchivo" alt="imagen">
+            </dd>
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.combustible.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.combustible.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.marca.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marca.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modelo.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modelo.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.transmision)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.transmision)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idAutomovil }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

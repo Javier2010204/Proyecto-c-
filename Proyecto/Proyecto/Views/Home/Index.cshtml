@@ -1,0 +1,53 @@
+﻿@model Proyecto.Models.Automovil
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (Session["idUsuario"] != null)
+{
+    <div class="page-header">
+        <h1>Auto Ventas Car's<small>Panel de usuario</small></h1>
+    </div>
+    <div class="slides">
+		<img src=".jpg" alt=""/>
+        <img src="C:/Users/HP/Desktop/Javier/imagenes/porshe.jpg" alt="" />
+        <img src="C:/Users/HP/Desktop/Javier/imagenes/ferrari.jpg" alt="" />
+        <img src="http://midias.folhavitoria.com.br/files/2015/12/740520753-carros.jpg" alt="" />
+	</div>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/jquery.slides.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+  			$(".slides").slidesjs({
+   				 play: {
+      				effect: "slide",
+        // [string] Can be either "slide" or "fade".
+      			interval: 3000,
+        // [number] Time spent on each slide in milliseconds.
+     			 auto: true,
+        // [boolean] Start playing the slideshow on load
+    }
+  });
+});
+
+	</script>
+}
+else
+{
+   <div class="page-header">
+        <h1>Auto Ventas Car's<small> Garantia y calidad</small></h1>
+
+    </div>
+    <div class="row">
+        <div class="thumbnail">
+            <img src="http://usahispanicpress.com/wp-content/uploads/2015/07/2015-mazda-mazda6_100466567_h.jpg" alt="..." width="480" height="580"/>
+            <div class="caption">
+                <h3>Vehiculos</h3>
+                <p>Los mejores vehiculos en un solo click</p>
+                <p>@Html.ActionLink("Ver mas...", "Index", "Automovil", new { area = "" }, new { @class = "btn btn-primary"})</p>
+            </div>
+        </div>
+    </div>
+}
+
